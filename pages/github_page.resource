@@ -1,14 +1,17 @@
 *** Settings ***
-Documentation     GitHub Page Object
-...               Contains locators and keywords for GitHub homepage
-Library           SeleniumLibrary
+Documentation       GitHub Page Object
+...                 Contains locators and keywords for GitHub homepage
+
+Library             SeleniumLibrary
+
 
 *** Variables ***
-${GITHUB_URL}         https://github.com
-${SEARCH_INPUT}       name=q
-${SIGNIN_LINK}        xpath=//a[contains(@href, '/login')]
-${PRICING_LINK}       xpath=//a[contains(@href, '/pricing')]
-${HEADER_LOGO}        css=.octicon-mark-github
+${GITHUB_URL}       https://github.com
+${SEARCH_INPUT}     name=q
+${SIGNIN_LINK}      xpath=//a[contains(@href, '/login')]
+${PRICING_LINK}     xpath=//a[contains(@href, '/pricing')]
+${HEADER_LOGO}      css=.octicon-mark-github
+
 
 *** Keywords ***
 Open GitHub Homepage
@@ -32,8 +35,8 @@ Click Pricing Link
     Wait Until Location Contains    /pricing    timeout=5s
 
 Verify Page Contains Text
-    [Arguments]    ${text}
     [Documentation]    Verifies that page contains specific text
+    [Arguments]    ${text}
     Page Should Contain    ${text}
 
 Close GitHub Page

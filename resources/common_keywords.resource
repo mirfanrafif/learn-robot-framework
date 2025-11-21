@@ -1,5 +1,6 @@
 *** Settings ***
-Documentation     Common reusable keywords for test automation
+Documentation       Common reusable keywords for test automation
+
 
 *** Keywords ***
 Log Environment Info
@@ -9,13 +10,13 @@ Log Environment Info
     Log    Test Name: ${TEST_NAME}
 
 Calculate Sum
-    [Arguments]    ${num1}    ${num2}
     [Documentation]    Calculates the sum of two numbers
+    [Arguments]    ${num1}    ${num2}
     ${result}=    Evaluate    ${num1} + ${num2}
     RETURN    ${result}
 
 Verify Text Contains
-    [Arguments]    ${text}    ${substring}
     [Documentation]    Verifies that text contains a substring
+    [Arguments]    ${text}    ${substring}
     Should Contain    ${text}    ${substring}
     Log    Verified: "${text}" contains "${substring}"

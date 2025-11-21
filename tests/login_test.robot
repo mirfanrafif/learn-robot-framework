@@ -1,6 +1,8 @@
 *** Settings ***
-Documentation     Login tests using Page Object Model
-Resource          ../pages/login_page.robot
+Documentation       Login tests using Page Object Model
+
+Resource            ../pages/login_page.resource
+
 
 *** Test Cases ***
 Successful Login Test

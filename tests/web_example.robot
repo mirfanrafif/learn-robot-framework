@@ -1,10 +1,13 @@
 *** Settings ***
-Documentation     Web automation tests using Page Object Model
-Resource          ../pages/google_page.robot
-Resource          ../pages/github_page.robot
+Documentation       Web automation tests using Page Object Model
+
+Resource            ../pages/google_page.resource
+Resource            ../pages/github_page.resource
+
 
 *** Variables ***
-${SEARCH_TERM}    Robot Framework
+${SEARCH_TERM}      Robot Framework
+
 
 *** Test Cases ***
 Google Search Test
@@ -30,7 +33,7 @@ GitHub Homepage Test
     [Tags]    web    selenium    github
     Open GitHub Homepage
     Verify GitHub Logo Is Visible
-    Verify Page Contains Text    Where the world builds software
+    Verify Page Contains Text    The future of building happens together
     Close GitHub Page
 
 GitHub Navigation Test

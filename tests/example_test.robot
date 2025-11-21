@@ -1,12 +1,15 @@
 *** Settings ***
-Documentation     Example test suite demonstrating Robot Framework basics
-Library           Collections
-Library           String
+Documentation       Example test suite demonstrating Robot Framework basics
+
+Library             Collections
+Library             String
+
 
 *** Variables ***
-${GREETING}       Hello, Robot Framework!
-@{FRUITS}         Apple    Banana    Orange
-&{USER}           name=John Doe    age=30    email=john@example.com
+${GREETING}     Hello, Robot Framework!
+@{FRUITS}       Apple    Banana    Orange
+&{USER}         name=John Doe    age=30    email=john@example.com
+
 
 *** Test Cases ***
 Simple Arithmetic Test
@@ -43,10 +46,11 @@ Dictionary Operations Test
     ${key_count}=    Get Length    ${keys}
     Should Be Equal As Numbers    ${key_count}    3
 
+
 *** Keywords ***
 Custom Greeting
-    [Arguments]    ${name}
     [Documentation]    Custom keyword that creates a personalized greeting
+    [Arguments]    ${name}
     ${greeting}=    Set Variable    Hello, ${name}!
     Log    ${greeting}
     RETURN    ${greeting}
